@@ -1,0 +1,85 @@
+<div class="container py-4" *ngIf="contenido">
+
+  <h1 class="mb-4">
+    <app-icon icon="bootstrap"></app-icon>
+    Sistemas de Diseño
+  </h1>
+
+  <!-- ¿Qué es un sistema de diseño? -->
+  <section class="mb-5" [id]="contenido.queEs.id">
+    <h2>{{ contenido.queEs.titulo }}</h2>
+    <p>{{ contenido.queEs.descripcion }}</p>
+    <ul *ngIf="contenido.queEs.puntos">
+      <li *ngFor="let punto of contenido.queEs.puntos">{{ punto }}</li>
+    </ul>
+  </section>
+
+  <!-- ¿Por qué usarlo? -->
+  <section class="mb-5" [id]="contenido.porQueUsarlo.id">
+    <h2>{{ contenido.porQueUsarlo.titulo }}</h2>
+    <p>{{ contenido.porQueUsarlo.descripcion }}</p>
+    <ul *ngIf="contenido.porQueUsarlo.puntos">
+      <li *ngFor="let punto of contenido.porQueUsarlo.puntos">{{ punto }}</li>
+    </ul>
+  </section>
+
+  <!-- Problemas de trabajar sin un sistema de diseño -->
+  <section class="mb-5" [id]="contenido.problemasSinSistema.id">
+    <h2>{{ contenido.problemasSinSistema.titulo }}</h2>
+    <p>{{ contenido.problemasSinSistema.descripcion }}</p>
+
+    <table class="table align-middle">
+      <thead>
+        <tr>
+          <th>Sin sistema de diseño</th>
+          <th>Con sistema de diseño</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let problema of problemas">
+          <td>
+            <app-badge text="✗" type="danger" typeText="text-white"></app-badge>
+            {{ problema.problema }}
+          </td>
+          <td>
+            <app-badge text="✓" type="success" typeText="text-white"></app-badge>
+            {{ problema.solucionConSistema }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Componentes clave -->
+  <section class="mb-5" [id]="contenido.componentesClave.id">
+    <h2>{{ contenido.componentesClave.titulo }}</h2>
+    <p>{{ contenido.componentesClave.descripcion }}</p>
+    <ul *ngIf="contenido.componentesClave.puntos">
+      <li *ngFor="let punto of contenido.componentesClave.puntos">{{ punto }}</li>
+    </ul>
+  </section>
+
+  <!-- Diseño atómico -->
+  <section class="mb-5" [id]="contenido.sistemaAtomico.id">
+    <h2>{{ contenido.sistemaAtomico.titulo }}</h2>
+    <p>{{ contenido.sistemaAtomico.descripcion }}</p>
+
+    <div class="card mb-3" *ngFor="let nivel of niveles; trackBy: trackPorNivel">
+      <div class="card-body">
+        <h3 class="card-title">
+          <app-icon [icon]="nivel.icono"></app-icon>
+          {{ nivel.nombre }}
+        </h3>
+        <p class="card-text">{{ nivel.descripcion }}</p>
+
+        <p *ngIf="nivel.ejemplos.length === 0" class="text-muted">
+          Sin ejemplos de componente directo en este nivel.
+        </p>
+        <span *ngFor="let ejemplo of nivel.ejemplos" class="me-2">
+          <app-badge [text]="ejemplo" type="primary" typeText="text-white"></app-badge>
+        </span>
+      </div>
+    </div>
+  </section>
+
+</div>
