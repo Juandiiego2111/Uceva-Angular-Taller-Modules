@@ -1,0 +1,10 @@
+@for (tema of temas; track tema.id) {
+  <div class="tema-card">
+    <h3>{{ tema.titulo }}</h3>
+    <ul>
+      @for (punto of tema.puntosClave; track $index) {
+        <li>{{ punto }}</li>
+      }
+    </ul>
+  </div>
+}
