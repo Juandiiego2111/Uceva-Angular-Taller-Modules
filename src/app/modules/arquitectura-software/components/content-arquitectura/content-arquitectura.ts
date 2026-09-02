@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Tema } from '../../interfaces/tema.interface';
 
 @Component({
   selector: 'app-content-arquitectura',
@@ -7,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './content-arquitectura.scss',
 })
 export class ContentArquitectura {
+
+  @Input() temas: Tema[] = [];
 
 }
