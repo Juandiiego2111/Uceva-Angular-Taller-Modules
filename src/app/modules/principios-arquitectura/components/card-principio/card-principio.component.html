@@ -1,0 +1,28 @@
+<div class="card h-100">
+	<div class="card-header d-flex justify-content-between align-items-center">
+		<h5 class="card-title mb-0">{{ principio.nombre }}</h5>
+		<app-badge
+			[text]="principio.nivelDeseado"
+			[type]="categoryMap[principio.nivelDeseado]" >
+		</app-badge>
+	</div>
+	<div class="card-body">
+		<p class="card-text">{{ principio.descripcion }}</p>
+
+		<ul class="list-group list-group-flush mb-3">
+			@for (beneficio of principio.beneficios; track beneficio) {
+				<li class="list-group-item bg-transparent">
+					• {{ beneficio }}
+				</li>
+			}
+		</ul>
+
+		<div class="alert alert-success mb-2">
+			<strong>✅ Ejemplo correcto:</strong> {{ principio.ejemploCorrecto }}
+		</div>
+
+		<div class="alert alert-danger mb-0">
+			<strong>❌ Ejemplo incorrecto:</strong> {{ principio.ejemploIncorrecto }}
+		</div>
+	</div>
+</div>
