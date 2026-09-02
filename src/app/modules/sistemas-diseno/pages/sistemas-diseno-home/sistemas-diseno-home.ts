@@ -46,6 +46,8 @@ export class SistemasDisenoHome implements OnInit {
   niveles: NivelAtomico[] = [];
 
   /**
+   * Inyecta el servicio de datos del módulo.
+   *
    * @param sistemasDisenoService Servicio que provee el contenido del módulo.
    */
   constructor(private readonly sistemasDisenoService: SistemasDisenoService) {}
