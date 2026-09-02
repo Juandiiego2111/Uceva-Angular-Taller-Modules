@@ -1,0 +1,23 @@
+<table class="table table-striped border">
+	<thead>
+		<tr>
+			<th scope="col">Nombre</th>
+			<th scope="col">Nivel deseado</th>
+			<th scope="col">Descripción</th>
+		</tr>
+	</thead>
+	<tbody>
+		@for (principio of principios; track principio) {
+			<tr>
+				<td>{{ principio.nombre }}</td>
+				<td>
+					<app-badge
+						[text]="principio.nivelDeseado"
+						[type]="categoryMap[principio.nivelDeseado]" >
+					</app-badge>
+				</td>
+				<td>{{ principio.descripcion }}</td>
+			</tr>
+		}
+	</tbody>
+</table>
