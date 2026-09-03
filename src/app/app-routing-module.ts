@@ -14,6 +14,11 @@ const routes: Routes = [
     loadChildren: () => import('./modules/arquitectura-software/arquitectura-software-module').then(m => m.ArquitecturaSoftwareModule)
   },
   {
+    path: 'principios-arquitectura',
+    loadChildren: () => import('./modules/principios-arquitectura/principios-arquitectura-module')
+      .then(m => m.PrincipiosArquitecturaModule)
+  },
+  {
     path: '**',
     redirectTo: 'arquitectura-software'
   },
