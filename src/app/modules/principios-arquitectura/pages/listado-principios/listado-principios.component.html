@@ -1,1 +1,9 @@
 <app-tabla-resumen-principios [principios]="principios"></app-tabla-resumen-principios>
+
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-3">
+  @for (p of principios; track p) {
+    <div class="col">
+      <app-card-principio [principio]="p"></app-card-principio>
+    </div>
+  }
+</div>
