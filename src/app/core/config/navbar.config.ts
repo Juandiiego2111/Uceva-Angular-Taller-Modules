@@ -14,5 +14,6 @@ import { NavbarItem } from "../../modules/shared/interfaces/navbar.interface";
  * <app-navbar></app-navbar>
  */
 export const NAVBAR_ITEMS: NavbarItem[] = [
+    { label: 'Sistemas de Diseño', url: '/sistemas-diseno' },
     { label: 'Arquitectura de Software', url: '/arquitectura-software' },
-]; 
+];
